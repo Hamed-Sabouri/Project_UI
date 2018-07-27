@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="CallTimeTem.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        function CallTimeSubmite() {
+            var StartHour = document.getElementById("StartHour").value;
+            var EndHour = document.getElementById("EndHour").value;
+            var StartMinutes = document.getElementById("StartMinutes").value;
+            var EndMinutes = document.getElementById("EndMinutes").value;
+            var StartYear = document.getElementById("StartYear").value;
+            var EndYear = document.getElementById("EndYear").value;
+            var StartMonth = document.getElementById("StartMonth").value;
+            var EndMonth = document.getElementById("EndMonth").value;
+            var StartDay = document.getElementById("StartDay").value;
+            var EndDay = document.getElementById("EndDay").value;
+
+            var xhr = new XMLHttpRequest();
+            var url = "url";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.StartHour + " , " + json.EndHour + " , " +json.StartMinutes + " , " + json.EndMinutes + " , "
+                        +json.StartYear + " , " + json.EndYear + " , " + json.StartMonth + " , " + json.EndMonth
+                        + " , " + json.StartDay + " , " + json.EndDay);
+                }
+            };
+            var data = JSON.stringify({
+                "StartHour" : " + StartHour + ",
+                "EndHour" : " + EndHour + ",
+                "StartMinutes" : "+ StartMinutes +",
+                "EndMinutes" : " +EndMinutes+ ",
+                "StartYear" : "+StartYear+",
+                "EndYear" : " +EndYear+ ",
+                "StartMonth" : "+StartMonth+",
+                "EndMonth" : "+ EndMonth +",
+                "StartDay" : " + StartDay + ",
+                "EndDay" : "+ EndDay +"
+            });
+            xhr.send(data);
+        }
+    </script>
+</head>
+<body style="background-color:rgb(77, 57, 0);">
+    <div class="log">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="StartHour" type="text" class="form-control" placeholder="Start Hour">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="EndHour" type="password" class="form-control" placeholder="End Hour">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="StartMinutes" type="text" class="form-control" placeholder="Start Minutes">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="EndMinutes" type="text" class="form-control" placeholder="End Minutes">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="StartYear" type="text" class="form-control" placeholder="Start Year">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="EndYear" type="text" class="form-control" placeholder="End Year">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="StartMonth" type="text" class="form-control" placeholder="Start Month">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="EndMonth" type="text" class="form-control" placeholder="End Month">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="StartDay" type="text" class="form-control" placeholder="Start Day">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hourglass"></i></span>
+            <input style="background-color:rgb(255, 228, 153)" id="EndDay" type="text" class="form-control" placeholder="End Day">
+        </div>
+        <br />
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="CallTimeSubmite();">Call Me !!!!</button>
+        <br />
+        <br />
+    </div>
+
+</body>
+</html>
