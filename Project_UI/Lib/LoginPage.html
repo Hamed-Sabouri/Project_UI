@@ -7,13 +7,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="LoginTem.css" rel="stylesheet" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        function LoginAccount() {
+            var UsreName = document.getElementById("UsreName").value;
+            var password = document.getElementById("password").value;
+            var Email = document.getElementById("Email").value;
+
+            var xhr = new XMLHttpRequest();
+            var url = "url";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.UsreName + ", " + json.password + ", " + json.Email);
+                }
+            };
+            var data = JSON.stringify({
+                "UsreName" : " + UsreName + ",
+                "password" : " + password + ",
+                "Email" : "+ Email +"
+            });
+            xhr.send(data);
+        }
+
+
+        const urlget = "url";
+        $('.btn').click(function () {
+            $.getJSON(urlget , function (result) {
+                var xhr = new XMLHttpRequest();
+                var res = "url?data=" + encodeURIComponent(JSON.stringify({result}));
+                xhr.open("GET", res, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var json = JSON.parse(xhr.responseText);
+                        var pas = json.password;
+                        var Em = json.Email;
+                        var UN = json.UsreName;
+                        var fl = json.Flag;
+                        if(fl == 2){
+                            alert("Incorrect Information data For Login");
+                        }else if(fl == 1 ){
+                            window.location.href = "";//Go To Page Teacher
+                        }else if(fl == 0){
+                            window.location.href = "";// Go To Page Student
+                        }
+                    }
+                };
+                xhr.send();
+            })
+        })
+
+    </script>
 </head>
 <!--rgb(0, 62, 0)    rgb(0, 112, 0)-->
 <body style="background-color:rgb(77, 0, 77);">
     <div class="log">
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-eye-open"></i></span>
-            <input style="background-color:rgb(255, 153, 255)" id="email" type="text" class="form-control" name="email" placeholder="Usre Name">
+            <input style="background-color:rgb(255, 153, 255)" id="UsreName" type="text" class="form-control" name="email" placeholder="Usre Name">
         </div>
         <br />
         <div class="input-group">
@@ -23,13 +77,13 @@
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input style="background-color:rgb(255, 153, 255)" id="password" type="password" class="form-control" name="password" placeholder="Email">
+            <input style="background-color:rgb(255, 153, 255)" id="Email" type="text" class="form-control" name="password" placeholder="Email">
         </div>
         <br />
-        <button type="button" class="btn btn-warning btn-lg btn-block">Login To Your Account</button>
+        <button type="button" class="btn btn-warning btn-lg btn-block" onclick="LoginAccount();">Login To Your Account</button>
         <br />
         <form action="CreateAccount.html">
-            <input type="submit" class="btn btn-danger btn-lg" value="Create Account">
+            <input type="submit" class="btn btn-danger btn-lg" id="btn" value="Create Account">
 
         </form>
 		<br />
