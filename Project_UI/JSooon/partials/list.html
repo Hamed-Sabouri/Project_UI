@@ -1,0 +1,37 @@
+
+<section class="artistpage">
+
+	<div class="search">
+
+		<h1>Search Manu : </h1>
+		<label>Search:</label>
+		<input ng-model="query" placeholder="Search for Objects" autofocus>
+		<hr/>
+		<label class="formgroup">Sort By :
+			<select ng-model="artistOrder">
+				<option value="FirstNameTeacher">First Name Teacher</option>
+				<option value="LastNameTeacher">Last Name Teacher</option>
+				<option value="Arey">Arey</option>
+				<option value="City">City</option>
+				<option value="SectionName">SectionName</option>
+			</select>
+		</label>
+
+	</div>
+
+	<ul class="artistlist">
+		<li class="artist cf" ng-repeat="item in artists | filter:query | orderBy:artistOrder:direction">
+			<a href="#details/{{ artists.indexOf(item) }}">
+				<div class="info">
+					<h1>{{ item.FirstNameTeacher }}</h1>
+					<h1>{{ item.LastNameTeacher }}</h1>
+					<h2>{{ item.Arey }}</h2>
+					<h2>{{ item.City }}</h2>
+					<h2>{{ item.SectionName }}</h2>
+					<h2>{{ item.Sex }}</h2>
+				</div>
+			</a>
+		</li>
+	</ul>
+
+</section>
