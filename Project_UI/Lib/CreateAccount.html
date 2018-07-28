@@ -16,6 +16,9 @@
             var password = document.getElementById("password").value;
             var DynamicPhone = document.getElementById("DynamicPhone").value;
             var StaticPhone = document.getElementById("StaticPhone").value;
+            var Sex = document.getElementById("Sex").value;
+            var Address = document.getElementById("Address").value;
+
             if(repassword == password){
                 var xhr = new XMLHttpRequest();
                 var url = "url";
@@ -25,7 +28,7 @@
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         var json = JSON.parse(xhr.responseText);
                         console.log(json.FirstName + ", " + json.LastName + ", " + json.UsreName + ", " +
-                            json.email);
+                            json.email + " , " + json.Sex + " , " + json.Address);
                     }
                 };
                 var data = JSON.stringify({
@@ -35,7 +38,10 @@
                     "email" : " + email + ",
                     "password" : " + password + ",
                     "DynamicPhone" : " + DynamicPhone + ",
-                    "StaticPhone" : " + StaticPhone + "
+                    "StaticPhone" : " + StaticPhone + ",
+                    "Sex" : " + Sex + ",
+                    "Address" : " + Address + ",
+                    "AccountStudent" : "0"
                 });
                 xhr.send(data);
             }else {
@@ -80,6 +86,16 @@
         </div>
         <br />
         <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+            <input style="background-color:hsl(0, 100%, 90%)" id="Address" type="text" class="form-control" name="password" placeholder="Address">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+            <input style="background-color:hsl(0, 100%, 90%)" id="Sex" type="text" class="form-control" name="password" placeholder="Sex">
+        </div>
+        <br />
+        <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
             <input style="background-color:hsl(0, 100%, 90%)" id="StaticPhone" type="text" class="form-control" name="password" placeholder="Static Phone">
         </div>
@@ -90,7 +106,6 @@
         </div>
         <br />
         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="myCreateAccount();">Create Account</button>
-        <br />
         <br />
     </div>
 

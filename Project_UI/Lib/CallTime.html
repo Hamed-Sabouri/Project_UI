@@ -21,7 +21,7 @@
             var EndDay = document.getElementById("EndDay").value;
 
             var xhr = new XMLHttpRequest();
-            var url = "url";
+            var url = "http://0.0.0.0:3000/";
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {
@@ -57,7 +57,7 @@
         <br />
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-            <input style="background-color:rgb(255, 228, 153)" id="EndHour" type="password" class="form-control" placeholder="End Hour">
+            <input style="background-color:rgb(255, 228, 153)" id="EndHour" type="text" class="form-control" placeholder="End Hour">
         </div>
         <br />
         <div class="input-group">

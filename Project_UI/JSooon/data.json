@@ -5,7 +5,8 @@
 		"Arey" : "Pasdaran",
 		"City" : "Tehran",
 		"SectionName" : "Shimeee",
-		"Sex" : "Aga"
+		"Sex" : "Aga",
+		"hoursone" : "1"
 	},
 	{
 		"FirstNameTeacher" : "Ali",
@@ -13,7 +14,8 @@
 		"Arey" : "Polkhajoo",
 		"City" : "Esfehan",
 		"SectionName" : "Fizik",
-		"Sex" : "Aga"
+		"Sex" : "Aga",
+		"hoursone" : "1:30"
 	},
 	{
 		"FirstNameTeacher" : "Sara",
@@ -21,7 +23,8 @@
 		"Arey" : "Seadkhandan",
 		"City" : "Tabriz",
 		"SectionName" : "Fizik",
-		"Sex" : "Khanoum"
+		"Sex" : "Khanoum",
+		"hoursone" : "2"
 	},
 	{
 		"FirstNameTeacher" : "Mahmoud",
@@ -29,7 +32,8 @@
 		"Arey" : "Bajak",
 		"City" : "Gom",
 		"SectionName" : "Reazi",
-		"Sex" : "Aga"
+		"Sex" : "Aga",
+		"hoursone" : "3"
 	},
 	{
 		"FirstNameTeacher" : "Maryam",
@@ -37,7 +41,8 @@
 		"Arey" : "Velengak",
 		"City" : "Esfehan",
 		"SectionName" : "Shimeee",
-		"Sex" : "Khanoum"
+		"Sex" : "Khanoum",
+		"hoursone" : "2:30"
 	},
 	{
 		"FirstNameTeacher" : "Reza",
@@ -45,7 +50,8 @@
 		"Arey" : "Abko",
 		"City" : "Mazandaran",
 		"SectionName" : "Adabeiat",
-		"Sex" : "Aga"
+		"Sex" : "Aga",
+		"hoursone" : "4"
 
 	},
 	{
@@ -54,7 +60,8 @@
 		"Arey" : "Pirozi",
 		"City" : "Gom",
 		"SectionName" : "Arabi",
-		"Sex" : "Aga"
+		"Sex" : "hoursone",
+		"hoursone" : "2:30"
 	},
 	{
 		"FirstNameTeacher" : "Hosein",
@@ -62,7 +69,8 @@
 		"Arey" : "Apadana",
 		"City" : "Tehran",
 		"SectionName" : "Arabi",
-		"Sex" : "Aga"
+		"Sex" : "Aga",
+		"hoursone" : "2"
 	},
 	{
 		"FirstNameTeacher" : "Sara",
@@ -70,7 +78,8 @@
 		"Arey" : "Mahalati",
 		"City" : "Tabriz",
 		"SectionName" : "Reazi",
-        "Sex" : "Khanoum"
+        "Sex" : "Khanoum" ,
+		"hoursone" : "4"
 	},
 	{
 		"FirstNameTeacher" : "Hadi",
@@ -78,6 +87,7 @@
 		"Arey" : "Doulat",
 		"City" : "Kermanshah",
 		"SectionName" : "Fizik",
-        "Sex" : "Khanoum"
+        "Sex" : "Khanoum" ,
+		"hoursone" : "3:30"
 	}
 ]
