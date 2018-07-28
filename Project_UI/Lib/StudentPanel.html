@@ -108,6 +108,42 @@
 
         .mySlides {display:none;}
     </style>
+
+
+    <script>
+        function SendComment() {
+            var FirstNameTeacherComment = document.getElementById("FirstNameTeacherComment").value;
+            var LastNameTeacherComment = document.getElementById('LastNameTeacherComment').value;
+            var UserNameComment = document.getElementById("UserNameComment").value;
+            var SendCommmmmment = document.getElementById("SendCommmmmment").value;
+
+            var xhr = new XMLHttpRequest();
+            var url = "http://0.0.0.0:3000/";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.FirstNameTeacherComment + " , " + json.LastNameTeacherComment +
+                        " ,  " + json.UserNameComment + " , " + json.SendCommmmmment);
+                }
+            };
+            var data = JSON.stringify({
+                "FirstNameTeacherComment" : " + FirstNameTeacherComment + ",
+                "LastNameTeacherComment" : " + LastNameTeacherComment + ",
+                "UserNameComment" : " + UserNameComment + ",
+                "SendCommmmmment" : " + SendCommmmmment + "
+            });
+            xhr.send(data);
+
+
+            alert("Send Your Cooment !!!!")
+        }
+
+
+    </script>
+
+
     <link rel="stylesheet" href="HomeTem.css">
     <link rel="stylesheet" href="clon.css">
     <link rel="stylesheet" href="Telnet.css">
@@ -207,9 +243,24 @@
             <div class="fakeimg"><p>Image</p></div>
             <div class="fakeimg"><p>Image</p></div>
         </div>
-        <div class="card">
-            <h3>Follow Me</h3>
-            <p>Some text..</p>
+        <div class="card" style="background-color: gold">
+            <h3>Input The Comment : </h3>
+
+             First Name Teacher :
+             <br>
+             <input type="text" name="FirstNameTeacherComment" id="FirstNameTeacherComment">
+             <br><br>
+             Last Name Teacher :
+             <br>
+             <input type="text" name="LastNameTeacherComment" id="LastNameTeacherComment">
+             <br><br>
+             User Name :
+             <input type="text" name="UserNameComment" id="UserNameComment">
+             <br><br>
+             <textarea rows="4" cols="25" name="comment" form="usrform" placeholder="Enter text here..."></textarea>
+             <br><br>
+             <input type="submit" id="SendCommmmmment" value="Send Comment" onclick="SendComment();" style="background-color:#4CAF50;border: none;color: white;font-size: 16px;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;margin: 4px 2px;cursor: pointer;">
+
         </div>
     </div>
 </div>
