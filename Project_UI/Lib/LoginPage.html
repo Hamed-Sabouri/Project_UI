@@ -43,9 +43,7 @@
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         var json = JSON.parse(xhr.responseText);
-                        var pas = json.password;
-                        var Em = json.Email;
-                        var UN = json.UsreName;
+                        var stid = json.StudentID;
                         var fl = json.Flag;
                         if(fl == 2){
                             alert("Incorrect Information data For Login");
