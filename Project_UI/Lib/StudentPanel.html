@@ -107,10 +107,75 @@
         }
 
         .mySlides {display:none;}
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
     </style>
 
 
     <script>
+
+
+        function Prepayment() {
+            var Prepayment = "20";
+
+            var xhr = new XMLHttpRequest();
+            var url = "http://0.0.0.0:3000/";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.Prepayment);
+                }
+            };
+            var data = JSON.stringify({
+                "Prepayment" : " + Prepayment + "
+            });
+            xhr.send(data);
+        }
+
+        function SubmitStudent() {
+            var SubmitStudent = "1"
+
+            var xhr = new XMLHttpRequest();
+            var url = "http://0.0.0.0:3000/";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.SubmitStudent);
+                }
+            };
+            var data = JSON.stringify({
+                "SubmitStudent" : " + SubmitStudent + "
+            });
+            xhr.send(data);
+        }
+
+        function SubmitTeacher() {
+            var SubmitTeacher = "1"
+
+            var xhr = new XMLHttpRequest();
+            var url = "http://0.0.0.0:3000/";
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json.SubmitTeacher);
+                }
+            };
+            var data = JSON.stringify({
+                "SubmitTeacher" : " + SubmitTeacher + "
+            });
+            xhr.send(data);
+        }
+
+
         function SendComment() {
             var FirstNameTeacherComment = document.getElementById("FirstNameTeacherComment").value;
             var LastNameTeacherComment = document.getElementById('LastNameTeacherComment').value;
@@ -219,12 +284,94 @@
             <p>Some text..</p>
             <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
         </div>
-        <div class="card">
-            <h2>TITLE HEADING</h2>
-            <h5>Title description, Sep 2, 2017</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <div class="card" style="background-color: gold">
+            <h2>Information Class : </h2>
+            <br>
+            <table style="border-style: double; border-color: red">
+                <tr>
+                    <td>Number Secction</td>
+                    <th>Day</th>
+                    <th>First Name Teacher</th>
+                    <td>Last Name Teacher</td>
+                    <th>Last Name Student</th>
+                    <th>First Name Student</th>
+                    <th>Number Count</th>
+                    <td>Hoursone</td>
+                    <th>prepayment Price</th>
+                    <th>OK Student</th>
+                    <th>OK Teacher</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <th>2 Shanbeh</th>
+                    <th>Hamed</th>
+                    <th>Sabouri</th>
+                    <th>Hossein</th>
+                    <td>Norozee</td>
+                    <th>5</th>
+                    <td>2:30</td>
+                    <th><input type="submit" value="Prepayment" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Student" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Teacher" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <th>5 Shanbeh</th>
+                    <th>Hamed</th>
+                    <td>Sabouri</td>
+                    <th>Hossein</th>
+                    <th>Norozee</th>
+                    <th>5</th>
+                    <td>2:30</td>
+                    <th><input type="submit" value="Prepayment" onclick="Prepayment();" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Student" onclick="SubmitStudent();" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Teacher" onclick="SubmitTeacher();" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <th>2 Shanbeh</th>
+                    <th>Hamed</th>
+                    <td>Sabouri</td>
+                    <th>Hossein</th>
+                    <th>Norozee</th>
+                    <th>5</th>
+                    <td>2:30</td>
+                    <th><input type="submit" value="Prepayment" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Student" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Teacher" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <th>5 Shanbeh</th>
+                    <th>Hamed</th>
+                    <td>Sabouri</td>
+                    <th>Hossein</th>
+                    <th>Norozee</th>
+                    <th>5</th>
+                    <td>2:30</td>
+                    <th><input type="submit" value="Prepayment" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Student" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Teacher" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <th>2 Shanbeh</th>
+                    <th>Hamed</th>
+                    <td>Sabouri</td>
+                    <th>Hossein</th>
+                    <th>Norozee</th>
+                    <th>5</th>
+                    <td>2:30</td>
+                    <th><input type="submit" value="Prepayment" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Student" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                    <th><input type="submit" value="Submit Teacher" style="background-color:#4CAF50;border: none;color: white;;padding: 10px 2px;"></th>
+                </tr>
+            </table>
+
+
+
+
+
         </div>
     </div>
     <div class="rightcolumn" style="background-color: blueviolet">
